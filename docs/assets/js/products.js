@@ -8,6 +8,10 @@ var KTDatatableDataLocalDemo = (function () {
   var demo = function () {
     const itemsCount = 100;
 
+    console.log(Date.now());
+
+    console.log(1000 * 60 * 24);
+
     function createData(count) {
       const data = [];
       for (let i = 0; i < count; i++) {
@@ -18,6 +22,7 @@ var KTDatatableDataLocalDemo = (function () {
           Status: i & 1 ? 1 : 2,
           Type: i & 1 ? 1 : 2,
           Actions: null,
+          PublishDate: Date.now() - i * 86400000,
         });
       }
 
@@ -76,6 +81,28 @@ var KTDatatableDataLocalDemo = (function () {
           title: "Order",
           width: 80,
           textAlign: "center",
+        },
+        {
+          field: "PublishDate",
+          title: "Published",
+          template: function (row) {
+            const d = new Date(row.PublishDate);
+            const m = [
+              "Jan.",
+              "Feb",
+              "Mar",
+              "Apr",
+              "May",
+              "Jun",
+              "Jul",
+              "Aug",
+              "Sep",
+              "Oct",
+              "Nov",
+              "Dec",
+            ];
+            return `${d.getDate()} / ${m[d.getMonth()]} / ${d.getFullYear()}`;
+          },
         },
         {
           field: "Status",
