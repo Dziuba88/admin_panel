@@ -3,26 +3,22 @@
 
 var KTDatatableDataLocalDemo = (function () {
   // Private functions
-
   // demo initializer
   var demo = function () {
     const itemsCount = 100;
-
-    console.log(Date.now());
-
-    console.log(1000 * 60 * 24);
 
     function createData(count) {
       const data = [];
       for (let i = 0; i < count; i++) {
         data.push({
-          CategoryID: i,
-          CategoryOrder: count - i,
-          CategoryName: "Category Name " + i,
-          Status: i & 1 ? 1 : 2,
-          Type: i & 1 ? 1 : 2,
+          ItemID: i,
+          ItemTitle: "Item Title " + i,
+          ItemStock: Math.floor(Math.random() * 100) + 1,
+          ItemPrice: (Math.random() * 100).toFixed(2),
+          ItemStatus: i & 1 ? 1 : 2,
           Actions: null,
           PublishDate: Date.now() - i * 86400000,
+          ItemCategory: "Category " + i,
         });
       }
 
@@ -47,21 +43,14 @@ var KTDatatableDataLocalDemo = (function () {
         footer: false,
         // display/hide footer
       },
-
       // column sorting
       sortable: true,
-
       pagination: true,
-
-      search: {
-        input: $("#kt_datatable_search_query"),
-        key: "generalSearch",
-      },
 
       // columns definition
       columns: [
         {
-          field: "CategoryID",
+          field: "ItemID",
           title: "#",
           sortable: false,
           width: 20,
@@ -72,15 +61,25 @@ var KTDatatableDataLocalDemo = (function () {
           textAlign: "center",
         },
         {
-          field: "CategoryName",
+          field: "ItemTitle",
           title: "Title",
           autoHide: false,
         },
         {
-          field: "CategoryOrder",
-          title: "Order",
-          width: 80,
-          textAlign: "center",
+          field: "ItemCategory",
+          title: "Category",
+        },
+        {
+          field: "ItemStock",
+          title: "In Stock",
+          width: 160,
+        },
+        {
+          field: "ItemPrice",
+          title: "Price",
+          template: function (row) {
+            return `<strong>${row.ItemPrice}  mdl</strong>`;
+          },
         },
         {
           field: "PublishDate",
@@ -101,11 +100,11 @@ var KTDatatableDataLocalDemo = (function () {
               "Nov",
               "Dec",
             ];
-            return `${d.getDate()} / ${m[d.getMonth()]} / ${d.getFullYear()}`;
+            return `${m[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()}`;
           },
         },
         {
-          field: "Status",
+          field: "ItemStatus",
           title: "Status",
           width: 160,
           template: function (row) {
@@ -121,33 +120,9 @@ var KTDatatableDataLocalDemo = (function () {
             };
             return (
               '<span class="label font-weight-bold label-lg ' +
-              status[row.Status].class +
+              status[row.ItemStatus].class +
               ' label-inline">' +
-              status[row.Status].title +
-              "</span>"
-            );
-          },
-        },
-        {
-          field: "Type",
-          title: "Type",
-          width: 160,
-          template: function (row) {
-            var status = {
-              1: {
-                title: "Service",
-                state: "secondary",
-              },
-              2: {
-                title: "Product",
-                state: "secondary",
-              },
-            };
-            return (
-              '<span class="font-weight-bold text-' +
-              status[row.Type].state +
-              '">' +
-              status[row.Type].title +
+              status[row.ItemStatus].title +
               "</span>"
             );
           },
@@ -166,15 +141,55 @@ var KTDatatableDataLocalDemo = (function () {
       ],
     });
 
+    $("#kt_datatable_search_query").on("change", function () {
+      datatable.search($(this).val(), "ItemTitle");
+    });
+
+    $("#kt_datatable_search_stock").on("change", function () {
+      datatable.search($(this).val(), "ItemStock");
+    });
+
     $("#kt_datatable_search_status").on("change", function () {
-      datatable.search($(this).val().toLowerCase(), "Status");
+      datatable.search($(this).val().toLowerCase(), "ItemStatus");
     });
 
-    $("#kt_datatable_search_type").on("change", function () {
-      datatable.search($(this).val().toLowerCase(), "Type");
+    $("#kt_datepicker_5").datepicker({});
+
+    $(
+      "#kt_datatable_search_status, #kt_datatable_change_category"
+    ).selectpicker();
+
+    $("[data-toggle=filters]").on("click", function (evt) {
+      evt.preventDefault();
+      $(this).toggleClass("active");
+      $("#filters ").toggleClass("d-none");
+
+      return false;
+    });
+  };
+
+  var demo3 = function () {
+    // init slider
+    var slider = document.getElementById("kt_nouislider_3");
+
+    noUiSlider.create(slider, {
+      start: [220, 670],
+      connect: true,
+      tooltips: [true, wNumb({ decimals: 2 })],
+      range: {
+        min: [0],
+        max: 1000,
+      },
     });
 
-    $("#kt_datatable_search_status, #kt_datatable_search_type").selectpicker();
+    // init slider input
+    var sliderInput0 = document.getElementById("kt_nouislider_3_input");
+    var sliderInput1 = document.getElementById("kt_nouislider_3.1_input");
+    var sliderInputs = [sliderInput1, sliderInput0];
+
+    slider.noUiSlider.on("update", function (values, handle) {
+      sliderInputs[handle].value = values[handle];
+    });
   };
 
   return {
@@ -182,6 +197,7 @@ var KTDatatableDataLocalDemo = (function () {
     init: function () {
       // init dmeo
       demo();
+      demo3();
     },
   };
 })();
