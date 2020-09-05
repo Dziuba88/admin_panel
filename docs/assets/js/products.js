@@ -28,26 +28,17 @@ var KTDatatableDataLocalDemo = (function () {
     var dataJSONArray = createData(itemsCount);
 
     var datatable = $("#kt_datatable").KTDatatable({
-      // datasource definition
       data: {
         type: "local",
         source: dataJSONArray,
         pageSize: 10,
       },
-
-      // layout definition
       layout: {
         scroll: false,
-        // enable/disable datatable scroll both horizontal and vertical when needed.
-        // height: 450, // datatable's body's fixed height
         footer: false,
-        // display/hide footer
       },
-      // column sorting
       sortable: true,
       pagination: true,
-
-      // columns definition
       columns: [
         {
           field: "ItemID",
@@ -131,11 +122,15 @@ var KTDatatableDataLocalDemo = (function () {
           field: "Actions",
           title: "Actions",
           sortable: false,
-          width: 80,
+          width: 118,
           overflow: "visible",
           autoHide: false,
           template: function () {
-            return '<a href="edit-category.html" class="btn btn-sm btn-clean btn-outline-primary btn-icon mr-2" data-toggle="tooltip" data-placement="left" title="Edit details"><i class="la la-edit"></i></a><a href="javascript:;" class="btn btn-sm btn-outline-danger btn-icon" data-toggle="tooltip" data-placement="left" title="Delete item"><i class="la la-trash-alt"></i></a>';
+            return `
+              <a href="edit-category.html" class="btn btn-sm btn-clean btn-outline-primary btn-icon mr-2" data-toggle="tooltip" data-placement="left" title="Edit details"><i class="la la-edit"></i></a>
+              <button type="button" class="btn btn-sm btn-clean btn-outline-success btn-icon mr-2" data-toggle="tooltip" data-placement="left" title="Export Item"><i class="la la-file-excel-o"></i></button>
+              <a href="javascript:;" class="btn btn-sm btn-outline-danger btn-icon" data-toggle="tooltip" data-placement="left" title="Delete item"><i class="la la-trash-alt"></i></a>
+            `;
           },
         },
       ],
