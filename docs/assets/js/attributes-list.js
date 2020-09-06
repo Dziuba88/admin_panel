@@ -15,6 +15,7 @@ var KTDatatableDataLocalDemo = (function () {
           AttributeID: i,
           AttributeOrder: count - i,
           AttributeName: "Attribute Name " + i,
+          AttributeGroupName: "Attribute Group Name " + i,
           Actions: null,
         });
       }
@@ -63,6 +64,10 @@ var KTDatatableDataLocalDemo = (function () {
           title: "Order",
           width: 80,
           textAlign: "center",
+        },
+        {
+          field: "AttributeGroupName",
+          title: "Group Name",
         },
         {
           field: "Actions",

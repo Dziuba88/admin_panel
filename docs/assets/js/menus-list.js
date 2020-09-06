@@ -14,7 +14,6 @@ var KTDatatableDataLocalDemo = (function () {
         data.push({
           MenuID: i,
           MenuName: "Menu Name " + i,
-          MenuAlias: "menu_alias_" + i,
           Status: i & 1 ? 1 : 2,
           Actions: null,
         });
@@ -46,10 +45,6 @@ var KTDatatableDataLocalDemo = (function () {
           field: "MenuName",
           title: "Title",
           autoHide: false,
-        },
-        {
-          field: "MenuAlias",
-          title: "Alias",
         },
         {
           field: "Status",

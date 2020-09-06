@@ -15,7 +15,6 @@ var KTDatatableDataLocalDemo = (function () {
           BannerID: i,
           BannerImg: i,
           BannerTitle: "Banner Title " + i,
-          BannerAction: "action_page_" + i + ".html",
           BannerPage: "banner_page_" + i + ".html",
           Status: i & 1 ? 1 : 2,
           Actions: null,
@@ -64,13 +63,6 @@ var KTDatatableDataLocalDemo = (function () {
           title: "Page",
           template: function (row) {
             return `<a href="${row.BannerPage}" target="_blank"><i class="la la-link"></i> ${row.BannerPage}</a>`;
-          },
-        },
-        {
-          field: "BannerAction",
-          title: "Action",
-          template: function (row) {
-            return `<a href="${row.BannerAction}" target="_blank"><i class="la la-link"></i> ${row.BannerAction}</a>`;
           },
         },
         {
