@@ -463,9 +463,9 @@
           <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
             <!--begin::Subheader-->
             <div class="subheader py-2 py-lg-6 subheader-solid" id="kt_subheader">
-              <div class="container-fluid d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap pt-4">
+              <div class="container-fluid d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
                 <!--begin::Info-->
-                <div class="d-flex align-items-center flex-wrap mr-2 mb-4">
+                <div class="d-flex align-items-center flex-wrap mr-1">
                   <!--begin::Page Heading-->
                   <div class="d-flex align-items-baseline flex-wrap mr-5">
                     <!--begin::Page Title-->
@@ -486,115 +486,36 @@
                   <!--end::Page Heading-->
                 </div>
                 <!--end::Info-->
-                <div class="subheader-actions text-right">
-                  <a href="#" class="btn btn-primary mr-2 mb-4"><i class="fas fa-file-medical"></i> <span class="d-none d-lg-inline"> New Record</span></a>
-                  <a href="#" class="btn btn-info mr-2 mb-4 "><i class="fas fa-file-upload"></i> <span class="d-none d-lg-inline"> Import Items</span></a>
-                  <a href="#" class="btn btn-success mr-2 mb-4 "><i class="fas fa-file-excel"></i> <span class="d-none d-lg-inline"> Download Model</span></a>
-                  <a href="#" class="btn btn-secondary mr-2 mb-4 d-inline-block d-lg-none" data-toggle="filters"><i class="fas fa-filter"></i> <span class="d-none d-lg-inline"> Filter Items</span></a>
-                </div>
               </div>
             </div>
             <!--end::Subheader-->
-
             <!--begin::Entry-->
             <div class="d-flex flex-column-fluid">
               <!--begin::Container-->
               <div class="container-fluid">
-                <div class="row">
-                  <div class="col-lg-8 col-xl-9 order-1 order-lg-0">
-                    <!--begin::Card-->
-                    <div class="card card-custom">
-                      <div class="card-body">
-                        <div class="d-md-flex d-block mb-7 justify-content-between">
-                          <div class="row flex-fill">
-                            <div class="col-sm-8 col-md-6 col-lg-4 my-2">
-                              <select class="form-control" id="kt_datatable_change_category">
-                                <option value="">Change category</option>
-                                <option value="1">Category 1</option>
-                                <option value="2">Category 2</option>
-                              </select>
-                            </div>
-                            <div class="col my-2"><a href="#" class="btn btn-light-primary px-6 font-weight-bold">Update</a></div>
-                          </div>
-                          <div class="card-toolbar">
-                            <button type="button" class="btn btn-success font-weight-bolder mr-2 mb-4" data-toggle="tooltip" data-placement="left" title="Export Selected to XLS"><i class="la la-file-excel-o"></i></button>
-                            <button type="button" class="btn btn-warning font-weight-bolder mr-2 mb-4" data-toggle="tooltip" data-placement="left" title="Unpublish Selected"><i class="la la-power-off"></i></button>
-                            <button type="button" class="btn btn-danger font-weight-bolder mb-4" data-toggle="tooltip" data-placement="left" title="Delete Selected"><i class="la la-trash-alt"></i></button>
-                          </div>
-                        </div>
-                        <!--begin: Datatable-->
-                        <div class="datatable datatable-bordered datatable-head-custom" id="kt_datatable"></div>
-                        <!--end: Datatable-->
-                      </div>
-                      <div class="card-footer d-flex flex-column flex-sm-row justify-content-end align-items-start">
-                        <div class="card-toolbar">
-                          <button type="button" class="btn btn-success font-weight-bolder mr-2 mb-4" data-toggle="tooltip" data-placement="left" title="Export Selected to XLS"><i class="la la-file-excel-o"></i></button>
-                          <button type="button" class="btn btn-warning font-weight-bolder mr-2 mb-4" data-toggle="tooltip" data-placement="left" title="Unpublish Selected"><i class="la la-power-off"></i></button>
-                          <button type="button" class="btn btn-danger font-weight-bolder mb-4" data-toggle="tooltip" data-placement="left" title="Delete Selected"><i class="la la-trash-alt"></i></button>
-                        </div>
-                      </div>
-                    </div>
-                    <!--end::Card-->
-                  </div>
-                  <div class="col-lg-4 col-xl-3 order-0 order-lg-1 mb-7 d-none d-lg-block" id="filters">
-                    <!--begin::Card-->
-                    <div class="card">
-                      <div class="card-header">
-                        <h4>Filters</h4>
-                      </div>
-                      <div class="card-body">
-                        <div class="input-icon mb-7">
-                          <input type="text" class="form-control" placeholder="Search by title..." id="kt_datatable_search_query" />
+                <!--begin::Card-->
+                <div class="card card-custom">
+                  <div class="card-header flex-wrap border-0 pt-6 pb-0 ">
+                    <div class="card-title col-lg-8 col-xl-6 d-flex pl-0">
+                      <div class="col-8 pl-0">
+                        <div class="input-icon">
+                          <input type="text" class="form-control" placeholder="Search..." id="kt_datatable_search_query" />
                           <span><i class="flaticon2-search-1 text-muted"></i></span>
                         </div>
-                        <div class="mb-7">
-                          <label>Status:</label>
-                          <select class="form-control" id="kt_datatable_search_status">
-                            <option value="">All</option>
-                            <option value="1">Published</option>
-                            <option value="2">Disabled</option>
-                          </select>
-                        </div>
-                        <div class="mb-7">
-                          <label>Price:</label>
-                          <div id="kt_nouislider_3" class="nouislider mb-4"></div>
-                          <div class="row align-items-center mb-7">
-                            <div class="col-6">
-                              <input type="text" class="form-control" id="kt_nouislider_3.1_input" placeholder="Min Quantity" />
-                            </div>
-                            <div class="col-6">
-                              <input type="text" class="form-control" id="kt_nouislider_3_input" placeholder="Max Quantity" />
-                            </div>
-                          </div>
-                        </div>
-                        <div class="mb-7">
-                          <label>In stock:</label>
-                          <input type="number" class="form-control" id="kt_datatable_search_stock">
-                        </div>
-                        <div class="mb-7">
-                          <div class="form-group ">
-                            <label>Range Picker</label>
-                            <div class="">
-                              <div class="input-daterange input-group" id="kt_datepicker_5">
-                                <input type="text" class="form-control" name="start" />
-                                <div class="input-group-append">
-                                  <span class="input-group-text"><i class="la la-ellipsis-h"></i></span>
-                                </div>
-                                <input type="text" class="form-control" name="end" />
-                              </div>
-                              <span class="form-text text-muted">Linked pickers for date range selection</span>
-                            </div>
-                          </div>
-                        </div>
-
                       </div>
-                      <div class="card-footer text-right">
-                        <a href="#" class="btn btn-secondary font-weight-bolder">Filter Items</a>
+                      <div class="col-4">
+                        <a href="#" class="btn btn-light-primary px-6 font-weight-bold">Search</a>
                       </div>
                     </div>
-                    <!--end::Card-->
+
+                  </div>
+                  <div class="card-body">
+                    <!--begin: Datatable-->
+                    <div class="datatable datatable-bordered datatable-head-custom" id="kt_datatable"></div>
+                    <!--end: Datatable-->
                   </div>
                 </div>
+                <!--end::Card-->
               </div>
               <!--end::Container-->
             </div>
@@ -929,10 +850,6 @@
     </div>
     <!--end::Scrolltop-->
 
-    <script>
-      var HOST_URL =
-        "https://preview.keenthemes.com/metronic/theme/html/tools/preview";
-    </script>
     <!--begin::Global Config(global config for global JS scripts)-->
     <script>
       var KTAppSettings = {
@@ -1003,7 +920,7 @@
     <!--end::Global Theme Bundle-->
 
     <!--begin::Page Scripts(used by this page)-->
-    <script src="assets/js/products.js"></script>
+    <script src="assets/js/raports-list.js"></script>
 
     <!--end::Page Scripts-->
   </body>

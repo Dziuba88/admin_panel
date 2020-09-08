@@ -14,12 +14,13 @@ var KTDatatableDataLocalDemo = (function () {
         data.push({
           ClientID: i,
           ClientMail: `clientmail${i}@email.com`,
-          ClientFirstName: `FirstName${i}`,
+          ClientFirstName: `FirstName`,
           ClientLastName: `LastName${i}`,
           ClientPhone: `+373 79 
             ${Math.floor(Math.random() * 10) + 10} 
             ${Math.floor(Math.random() * 10) + 10} 
             ${Math.floor(Math.random() * 10) + 10}`,
+          ClientSocial: i & 5 ? null : "#linktosocialprofile",
           Type: i & 1 ? 1 : 2,
           Actions: null,
         });
@@ -50,13 +51,11 @@ var KTDatatableDataLocalDemo = (function () {
         },
         {
           field: "ClientFirstName",
-          title: "First Name",
+          title: "Full Name",
           autoHide: false,
-        },
-        {
-          field: "ClientLastName",
-          title: "Last Name",
-          autoHide: false,
+          template: function (row) {
+            return `${row.ClientFirstName} ${row.ClientLastName}`;
+          },
         },
         {
           field: "ClientMail",
@@ -65,6 +64,29 @@ var KTDatatableDataLocalDemo = (function () {
         {
           field: "ClientPhone",
           title: "Phone",
+        },
+        {
+          field: "ClientSocial",
+          title: "Social",
+          template: function (row) {
+            return row.ClientSocial
+              ? `<a href="${row.ClientSocial}" class="btn btn-icon btn-xs btn-facebook" ><i class="socicon-facebook"></i></a>`
+              : "";
+          },
+        },
+        {
+          field: "Actions",
+          title: "Actions",
+          sortable: false,
+          width: 78,
+          overflow: "visible",
+          autoHide: false,
+          template: function () {
+            return `
+              <a href="javascript:;" class="btn btn-sm btn-clean btn-outline-primary btn-icon mr-2" data-toggle="tooltip" data-placement="left" title="Edit details"><i class="la la-edit"></i></a>
+              <a href="javascript:;" class="btn btn-sm btn-outline-danger btn-icon" data-toggle="tooltip" data-placement="left" title="Delete user"><i class="la la-trash-alt"></i></a>
+            `;
+          },
         },
       ],
     });

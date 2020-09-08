@@ -16,11 +16,11 @@ var KTDatatableDataLocalDemo = (function () {
           ClientMail: `clientmail${i}@email.com`,
           ClientFirstName: `FirstName${i}`,
           ClientLastName: `LastName${i}`,
+          SubscribeDate: Date.now() - i * 86400000,
           ClientPhone: `+373 79 
             ${Math.floor(Math.random() * 10) + 10} 
             ${Math.floor(Math.random() * 10) + 10} 
             ${Math.floor(Math.random() * 10) + 10}`,
-          Type: i & 1 ? 1 : 2,
           Actions: null,
         });
       }
@@ -65,6 +65,28 @@ var KTDatatableDataLocalDemo = (function () {
         {
           field: "ClientPhone",
           title: "Phone",
+        },
+        {
+          field: "SubscribeDate",
+          title: "Subscribed",
+          template: function (row) {
+            const d = new Date(row.SubscribeDate);
+            const m = [
+              "Jan.",
+              "Feb",
+              "Mar",
+              "Apr",
+              "May",
+              "Jun",
+              "Jul",
+              "Aug",
+              "Sep",
+              "Oct",
+              "Nov",
+              "Dec",
+            ];
+            return `${m[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()}`;
+          },
         },
       ],
     });

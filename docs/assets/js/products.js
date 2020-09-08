@@ -5,13 +5,14 @@ var KTDatatableDataLocalDemo = (function () {
   // Private functions
   // demo initializer
   var demo = function () {
-    const itemsCount = 100;
+    const itemsCount = 18;
 
     function createData(count) {
       const data = [];
       for (let i = 0; i < count; i++) {
         data.push({
           ItemID: i,
+          ItemImage: `assets/media/stock-600x600/img-${i + 1}.jpg`,
           ItemTitle: "Item Title " + i,
           ItemStock: Math.floor(Math.random() * 100) + 1,
           ItemPrice: (Math.random() * 100).toFixed(2),
@@ -52,6 +53,16 @@ var KTDatatableDataLocalDemo = (function () {
           textAlign: "center",
         },
         {
+          field: "ItemImage",
+          title: "Image",
+          sortable: false,
+          width: 80,
+          textAlign: "center",
+          template: function (row) {
+            return `<a href="" class=""><img src="${row.ItemImage}" class="img-thumbnail rounded img-fluid" alt="..."></a>`;
+          },
+        },
+        {
           field: "ItemTitle",
           title: "Title",
           autoHide: false,
@@ -63,7 +74,8 @@ var KTDatatableDataLocalDemo = (function () {
         {
           field: "ItemStock",
           title: "In Stock",
-          width: 160,
+          width: 80,
+          textAlign: "center",
         },
         {
           field: "ItemPrice",
@@ -122,13 +134,12 @@ var KTDatatableDataLocalDemo = (function () {
           field: "Actions",
           title: "Actions",
           sortable: false,
-          width: 118,
+          width: 78,
           overflow: "visible",
           autoHide: false,
           template: function () {
             return `
               <a href="edit-category.html" class="btn btn-sm btn-clean btn-outline-primary btn-icon mr-2" data-toggle="tooltip" data-placement="left" title="Edit details"><i class="la la-edit"></i></a>
-              <button type="button" class="btn btn-sm btn-clean btn-outline-success btn-icon mr-2" data-toggle="tooltip" data-placement="left" title="Export Item"><i class="la la-file-excel-o"></i></button>
               <a href="javascript:;" class="btn btn-sm btn-outline-danger btn-icon" data-toggle="tooltip" data-placement="left" title="Delete item"><i class="la la-trash-alt"></i></a>
             `;
           },
