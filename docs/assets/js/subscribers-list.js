@@ -21,6 +21,7 @@ var KTDatatableDataLocalDemo = (function () {
             ${Math.floor(Math.random() * 10) + 10} 
             ${Math.floor(Math.random() * 10) + 10} 
             ${Math.floor(Math.random() * 10) + 10}`,
+          ClientLng: i & 2 ? "ru-RU" : "ro-RO",
           Actions: null,
         });
       }
@@ -65,6 +66,11 @@ var KTDatatableDataLocalDemo = (function () {
         {
           field: "ClientPhone",
           title: "Phone",
+        },
+        {
+          field: "ClientLng",
+          title: "Lang",
+          textAlign: "center",
         },
         {
           field: "SubscribeDate",

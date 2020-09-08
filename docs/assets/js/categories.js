@@ -48,10 +48,7 @@ var KTDatatableDataLocalDemo = (function () {
 
       pagination: true,
 
-      search: {
-        input: $("#kt_datatable_search_query"),
-        key: "generalSearch",
-      },
+      search: { input: $("#kt_datatable_search_query"), key: "generalSearch" },
 
       // columns definition
       columns: [
