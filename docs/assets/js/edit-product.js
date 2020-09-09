@@ -154,6 +154,8 @@ var KTBootstrapSwitch = (function () {
       },
     });
 
+    $("#kt_repeater_3").repeater();
+
     $("#kt_touchspin_1, #kt_touchspin_2").TouchSpin({
       buttondown_class: "btn btn-light-danger",
       buttonup_class: "btn btn-light-success",
