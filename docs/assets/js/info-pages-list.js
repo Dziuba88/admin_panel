@@ -59,7 +59,7 @@ var KTDatatableDataLocalDemo = (function () {
           width: 80,
           textAlign: "center",
           template: function (row) {
-            return `<a href="edit-info-page.html" class=""><img src="assets/media/stock-600x600/img-${row.ItemImage}.jpg" class="img-thumbnail rounded img-fluid" alt="..."></a>`;
+            return `<a href="" class=""><img src="assets/media/stock-600x600/img-${row.ItemImage}.jpg" class="img-thumbnail rounded img-fluid" alt="..."></a>`;
           },
         },
         {

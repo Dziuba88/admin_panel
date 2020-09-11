@@ -497,203 +497,44 @@
               <!--begin::Container-->
               <div class="container-fluid">
                 <div class="card card-custom">
-                  <div class="card-header card-custom-header pt-7">
-                    <ul class="nav nav-pills" role="tablist">
-                      <li class="nav-item" role="presentation">
-                        <a class="nav-link active" data-toggle="tab" href="#general">
-                          <span class="nav-icon"><i class="la la-file-text-o"></i></span>
-                          <span class="nav-text">General</span>
-                        </a>
-                      </li>
-                      <li class="nav-item" role="presentation">
-                        <a class="nav-link" data-toggle="tab" href="#data">
-                          <span class="nav-icon"><i class="la la-cog"></i></span>
-                          <span class="nav-text">Date</span>
-                        </a>
-                      </li>
-                    </ul>
+                  <div class="card-header pt-7">
+                    <h3>Add / Edit Translations</h3>
                   </div>
                   <div class="card-body">
-                    <div class="tab-content">
-                      <div class="tab-pane fade show active" id="general" role="tabpanel">
-                        <!-- LANG TABS -->
-                        <ul class="nav nav-light-success nav-pills justify-content-end" role="tablist">
-                          <li class="nav-item" role="presentation">
-                            <a class="nav-link active" data-toggle="tab" href="#lang-ru">
-                              <span class="nav-icon"><img src="assets/media/svg/flags/248-russia.svg" alt="" class="mr-2"></span>
-                              <span class="nav-text">Ru</span>
-                            </a>
-                          </li>
-                          <li class="nav-item" role="presentation">
-                            <a class="nav-link" data-toggle="tab" href="#lang-ro">
-                              <span class="nav-icon"><img src="assets/media/svg/flags/212-moldova.svg" alt="" class="mr-2"></span>
-                              <span class="nav-text">Ro</span>
-                            </a>
-                          </li>
-                          <li class="nav-item" role="presentation">
-                            <a class="nav-link" data-toggle="tab" href="#lang-en">
-                              <span class="nav-icon"><img src="assets/media/svg/flags/226-united-states.svg" alt="" class="mr-2"></span>
-                              <span class="nav-text">En</span>
-                            </a>
-                          </li>
-                        </ul>
-                        <div class="tab-content">
-                          <div class="tab-pane fade show active" id="lang-ru" role="tabpanel">
-                            <div class="row">
-                              <div class="col-lg-8 col-xl-9">
-                                <div class="form-group">
-                                  <label>Category Name</label>
-                                  <input type="text" class="form-control form-control-lg" placeholder="Type Category title ...">
-                                </div>
-                                <div class="tinymce">
-                                  <textarea id="kt-tinymce-4" name="kt-tinymce-4" class="tox-target">
-                                      <h1>Quick and Simple TinyMCE 5 Integration</h1>
-                                      <p>Here goes the&nbsp;<a href="#">Minitial content of the editor</a>. Lorem Ipsum is simply dummy text of the&nbsp;<em>printing and typesetting</em>&nbsp;industry.</p>
-                                      <blockquote>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</blockquote>
-                                      <h3 style="text-align: right;">Flexible &amp; Powerful</h3>
-                                      <p style="text-align: right;"><strong>Lorem Ipsum has been the industry's</strong>&nbsp;standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.</p>
-                                      <ul>
-                                          <li>List item 1</li>
-                                          <li>List item 2</li>
-                                          <li>List item 3</li>
-                                          <li>List item 4</li>
-                                      </ul>
-                                    </textarea>
-                                </div>
-                              </div>
-                              <div class="col-lg-4 col-xl-3">
-                                <div class="form-group">
-                                  <label>Seo URL</label>
-                                  <input type="text" class="form-control form-control-solid">
-                                </div>
-                                <div class="form-group">
-                                  <label>Meta Title</label>
-                                  <input type="text" class="form-control form-control-solid">
-                                </div>
-                                <div class="form-group">
-                                  <label for="exampleTextarea">Meta Description</label>
-                                  <textarea class="form-control form-control-solid" rows="3"></textarea>
-                                </div>
-                                <div class="form-group">
-                                  <label for="exampleTextarea">Meta Keywords</label>
-                                  <textarea class="form-control form-control-solid" rows="3"></textarea>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="tab-pane fade" id="lang-ro" role="tabpanel">lang-ro Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque nobis nostrum ratione, fugit nesciunt repellendus quaerat suscipit blanditiis eligendi sint?</div>
-                          <div class="tab-pane fade" id="lang-en" role="tabpanel">lang-en Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque nobis nostrum ratione, fugit nesciunt repellendus quaerat suscipit blanditiis eligendi sint?</div>
+                    <div class="row">
+                      <div class="col-lg-9">
+                        <div class="form-group">
+                          <label class="">Language name</label>
+                          <input type="text" class="form-control">
                         </div>
-                        <!-- END LANG TABS -->
+                        <div class="separator separator-solid separator-secondary mt-7 mb-7"></div>
+                        <div class="form-group ">
+                          <label>Language locale</label>
+                          <select class="form-control form-control-solid selectpicker">
+                            <option value="1" selected>ru-RU</option>
+                            <option value="2">ro-RO</option>
+                            <option value="3">en-GB</option>
+                          </select>
+                        </div>
+                        <div class="separator separator-solid separator-secondary mt-7 mb-7"></div>
                       </div>
-                      <div class="tab-pane fade" id="data" role="tabpanel">
-                        <div class="row">
-                          <div class="col-lg-8 col-xl-9">
-                            <div class="form-group">
-                              <label>Parent Category</label>
-                              <div class="typeahead"><input class="form-control form-control-lg" id="kt_typeahead_1" type="text" placeholder="Parent Category" /></div>
-                            </div>
-                            <div class="separator separator-solid separator-secondary mt-7 mb-7"></div>
-                            <div class="form-group">
-                              <label>Filters</label>
-                              <div class="typeahead"><input class="form-control form-control-lg" id="kt_typeahead_2" type="text" placeholder="Filters" /></div>
-                              <ul class="list-group list-group-flush bg-light">
-                                <li class="list-group-item list-group-item-light d-flex justify-content-between">
-                                  <span name="">Lorem ipsum dolor sit amet.</span>
-                                  <a href="javascript:;"><i class="text-danger la la-trash-o"></i></a>
-                                </li>
-                                <li class="list-group-item list-group-item-light d-flex justify-content-between">
-                                  <span name="">Lorem ipsum dolor sit amet.</span>
-                                  <a href="javascript:;"><i class="text-danger la la-trash-o"></i></a>
-                                </li>
-                                <li class="list-group-item list-group-item-light d-flex justify-content-between">
-                                  <span name="">Lorem ipsum dolor sit amet.</span>
-                                  <a href="javascript:;"><i class="text-danger la la-trash-o"></i></a>
-                                </li>
-                                <li class="list-group-item list-group-item-light d-flex justify-content-between">
-                                  <span name="">Lorem ipsum dolor sit amet.</span>
-                                  <a href="javascript:;"><i class="text-danger la la-trash-o"></i></a>
-                                </li>
-                              </ul>
-                            </div>
-                            <div class="separator separator-solid separator-secondary mt-7 mb-7"></div>
-                            <div class="row">
-                              <div class="col-sm-6">
-                                <div class="form-group">
-                                  <label class="">ECO</label>
-                                  <div><input data-switch="true" type="checkbox" data-on-text="Yes" data-handle-width="70" data-off-text="No" data-off-color="danger" data-on-color="success" /></div>
-                                </div>
-                              </div>
-                              <div class="col-sm-6">
-                                <div class="form-group">
-                                  <label class="">VEGAN</label>
-                                  <div><input data-switch="true" type="checkbox" data-on-text="Yes" data-handle-width="70" data-off-text="No" data-off-color="danger" data-on-color="success" /></div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="separator separator-solid separator-secondary mt-7 mb-7"></div>
-                            <div class="row align-items-end">
-                              <div class="col-sm-6 col-lg-4">
-                                <div class="form-group">
-                                  <label class="">Home Page Order</label>
-                                  <input class="form-control" type="number" placeholder="" />
-                                </div>
-                              </div>
-                              <div class="col-sm-6 col-lg-4">
-                                <div class="form-group row">
-                                  <div class="mr-2">
-                                    <span class="switch switch-icon">
-                                      <label>
-                                        <input type="checkbox" checked="checked" name="select" />
-                                        <span></span>
-                                      </label>
-                                    </span>
-                                  </div>
-                                  <label class="col-form-label">Home page</label>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="separator separator-solid separator-secondary mt-7 mb-7"></div>
-                          </div>
-                          <div class="col-lg-4 col-xl-3">
-                            <div class="text-center">
-                              <label for="Category image"></label>
-                              <div class="image-input image-input-outline" id="kt_image_1">
-                                <div class="image-input-wrapper" style="background-image: url(assets/media/products/1.png);width: 220px;height: 220px;"></div>
-                                <label class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" data-original-title="Change avatar">
-                                  <i class="fa fa-pen icon-sm text-muted"></i>
-                                  <input type="file" name="profile_avatar" accept=".png, .jpg, .jpeg" />
-                                  <input type="hidden" name="profile_avatar_remove" />
-                                </label>
-                                <span class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="cancel" data-toggle="tooltip" title="Cancel avatar">
-                                  <i class="ki ki-bold-close icon-xs text-muted"></i>
-                                </span>
-                              </div>
-                            </div>
-                            <div class="separator separator-solid separator-secondary mt-7 mb-7"></div>
-                            <div class="form-group ">
-                              <label>Category Type</label>
-                              <select class="form-control form-control-solid selectpicker">
-                                <option value="1">Product</option>
-                                <option value="2">Service</option>
-                              </select>
-                            </div>
-                            <div class="form-group">
-                              <label>Category Order</label>
-                              <input class="form-control" type="number" placeholder="Category order" />
-                            </div>
-
-                            <div class="form-group">
-                              <label class="">Status</label>
-                              <div><input data-switch="true" type="checkbox" checked="checked" data-on-text="Enabled" data-handle-width="70" data-off-text="Disabled" data-off-color="danger" data-on-color="success" /></div>
-                            </div>
-
-                          </div>
+                      <div class="col-lg-3">
+                        <div class="form-group ">
+                          <label>Language Type</label>
+                          <select class="form-control form-control-solid selectpicker">
+                            <option value="1" selected>Site</option>
+                            <option value="2">Admin Panel</option>
+                          </select>
                         </div>
+                        <div class="separator separator-solid separator-secondary mt-7 mb-7"></div>
+                        <div class="form-group">
+                          <label class="">Language Status</label>
+                          <div><input data-switch="true" type="checkbox" checked="checked" data-on-text="Enabled" data-handle-width="70" data-off-text="Disabled" data-off-color="danger" data-on-color="success" /></div>
+                        </div>
+                        <div class="separator separator-solid separator-secondary mt-7 mb-7"></div>
                       </div>
                     </div>
                   </div>
-
                   <div class="card-footer d-flex flex-column flex-sm-row justify-content-end align-items-start"><a href="#" class="btn btn-primary font-weight-bolder mb-4"><i class="la la-save"></i> Save changes</a></div>
                 </div>
               </div>
@@ -1100,9 +941,7 @@
     <!--end::Global Theme Bundle-->
 
     <!--begin::Page Scripts(used by this page)-->
-    <script src="assets/plugins/custom/tinymce/tinymce.bundle.js"></script>
-    <script src="assets/js/edit-category.js"></script>
-
+    <script src="assets/js/edit-translations.js"></script>
     <!--end::Page Scripts-->
   </body>
   <!--end::Body-->
