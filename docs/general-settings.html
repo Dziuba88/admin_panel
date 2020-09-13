@@ -498,210 +498,114 @@
               <div class="container-fluid">
                 <div class="card card-custom">
                   <div class="card-header align-items-center">
-                    <h3>Edit Language Variables</h3>
+                    <h3>General settings</h3>
                   </div>
                   <div class="card-body">
+                    <h3 class="pt-7 pb-5 mb-7 border-bottom">Logo & favicon</h3>
+                    <div class="row align-items-center">
+                      <div class="col-lg mb-7">
+                        <label class="d-block">Logo</label>
+                        <div class="image-input image-input-outline" id="kt_image_1">
+                          <div class="image-input-wrapper" style="background-image: url(assets/media/logos/logo.png);width:200px;height:200px;"></div>
+                          <label class="btn btn-xs btn-icon btn-circle btn-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" data-original-title="Change logo">
+                            <i class="fa fa-pen icon-sm text-white"></i>
+                            <input type="file" name="profile_avatar" accept=".png, .jpg, .jpeg" />
+                            <input type="hidden" name="profile_avatar_remove" />
+                          </label>
+                          <span class="btn btn-xs btn-icon btn-circle btn-danger btn-shadow" data-action="cancel" data-toggle="tooltip" title="Cancel logo"><i class="ki ki-bold-close icon-xs text-white"></i></span>
+                          <span class="btn btn-xs btn-icon btn-circle btn-danger btn-shadow" data-action="remove" data-toggle="tooltip" title="Remove logo"><i class="ki ki-bold-close icon-xs text-white"></i></span>
+                        </div>
+                      </div>
+                      <div class="col-lg mb-7">
+                        <label class="d-block">Favicon</label>
+                        <div class="image-input image-input-outline" id="kt_image_2">
+                          <div class="image-input-wrapper" style="background-image: url(assets/media/logos/favicon.ico);width:100px;height:100px;"></div>
+                          <label class="btn btn-xs btn-icon btn-circle btn-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" data-original-title="Change favicon">
+                            <i class="fa fa-pen icon-sm text-white"></i>
+                            <input type="file" name="profile_avatar" accept=".png, .jpg, .jpeg" />
+                            <input type="hidden" name="profile_avatar_remove" />
+                          </label>
+                          <span class="btn btn-xs btn-icon btn-circle btn-danger btn-shadow" data-action="cancel" data-toggle="tooltip" title="Cancel favicon"><i class="ki ki-bold-close icon-xs text-white"></i></span>
+                          <span class="btn btn-xs btn-icon btn-circle btn-danger btn-shadow" data-action="remove" data-toggle="tooltip" title="Remove favicon"><i class="ki ki-bold-close icon-xs text-white"></i></span>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-xl-3">
+                        <div class="form-group">
+                          <label class="">Moderation MODE</label>
+                          <div><input data-switch="true" type="checkbox" checked="checked" data-on-text="Enabled" data-handle-width="70" data-off-text="Disabled" data-off-color="danger" data-on-color="success" /></div>
+                        </div>
+                        <div class="separator separator-solid separator-secondary mt-7 mb-7"></div>
+                        <div class="form-group ">
+                          <label>Site language</label>
+                          <select class="form-control selectpicker" data-style="btn-dark">
+                            <option value="1" selected>Romana</option>
+                            <option value="2">Russian</option>
+                            <option value="3">English</option>
+                          </select>
+                        </div>
+                        <div class="separator separator-solid separator-secondary mt-7 mb-7"></div>
+                        <div class="form-group ">
+                          <label>Admin language</label>
+                          <select class="form-control selectpicker" data-style="btn-dark">
+                            <option value="1" selected>Romana</option>
+                            <option value="2">Russian</option>
+                            <option value="3">English</option>
+                          </select>
+                        </div>
 
-                    <div class="row">
-                      <div class="col">
-                        <div class="form-group">
-                          <label>Variable</label>
-                          <input type="text" class="form-control form-control-solid" value="VARIABLE_NAME" readonly>
-                        </div>
                       </div>
-                      <div class="col-lg-8 col-xl-9">
+                    </div>
+                    <h3 class="pt-7 pb-5 mb-7 border-bottom">General</h3>
+                    <div class="row">
+                      <div class="col-lg-6">
                         <div class="form-group">
-                          <label>Variable value</label>
-                          <div class="input-group">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text pt-1 pb-1"><img class="h-20px w-20px rounded-sm" src="assets/media/svg/flags/226-united-states.svg" alt=""></span>
-                            </div>
-                            <input type="text" class="form-control" placeholder="Variable value">
-                          </div>
-                        </div>
-                        <div class="separator separator-solid separator-secondary mb-7"></div>
-                        <div class="form-group">
-                          <label>Variable value</label>
-                          <div class="input-group">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text pt-1 pb-1"><img class="h-20px w-20px rounded-sm" src="assets/media/svg/flags/212-moldova.svg" alt=""></span>
-                            </div>
-                            <input type="text" class="form-control" placeholder="Variable value">
-                          </div>
-                        </div>
-                        <div class="separator separator-solid separator-secondary mb-7"></div>
-                        <div class="form-group">
-                          <label>Variable value</label>
-                          <div class="input-group">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text pt-1 pb-1"><img class="h-20px w-20px rounded-sm" src="assets/media/svg/flags/248-russia.svg" alt=""></span>
-                            </div>
-                            <input type="text" class="form-control" placeholder="Variable value">
-                          </div>
+                          <label>e-Mail</label>
+                          <input type="email" class="form-control">
                         </div>
                       </div>
                     </div>
-                    <div class="separator separator-solid separator-secondary mb-7"></div>
+                    <div class="separator separator-solid separator-secondary mt-7 mb-7"></div>
                     <div class="row">
-                      <div class="col">
+                      <div class="col-lg-6">
                         <div class="form-group">
-                          <label>Variable</label>
-                          <input type="text" class="form-control form-control-solid" value="VARIABLE_NAME" readonly>
-                        </div>
-                      </div>
-                      <div class="col-lg-8 col-xl-9">
-                        <div class="form-group">
-                          <label>Variable value</label>
-                          <div class="input-group">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text pt-1 pb-1"><img class="h-20px w-20px rounded-sm" src="assets/media/svg/flags/226-united-states.svg" alt=""></span>
-                            </div>
-                            <input type="text" class="form-control" placeholder="Variable value">
-                          </div>
-                        </div>
-                        <div class="separator separator-solid separator-secondary mb-7"></div>
-                        <div class="form-group">
-                          <label>Variable value</label>
-                          <div class="input-group">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text pt-1 pb-1"><img class="h-20px w-20px rounded-sm" src="assets/media/svg/flags/212-moldova.svg" alt=""></span>
-                            </div>
-                            <input type="text" class="form-control" placeholder="Variable value">
-                          </div>
-                        </div>
-                        <div class="separator separator-solid separator-secondary mb-7"></div>
-                        <div class="form-group">
-                          <label>Variable value</label>
-                          <div class="input-group">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text pt-1 pb-1"><img class="h-20px w-20px rounded-sm" src="assets/media/svg/flags/248-russia.svg" alt=""></span>
-                            </div>
-                            <input type="text" class="form-control" placeholder="Variable value">
-                          </div>
+                          <label>Facebook page</label>
+                          <input type="url" class="form-control">
                         </div>
                       </div>
                     </div>
-                    <div class="separator separator-solid separator-secondary mb-7"></div>
+                    <div class="separator separator-solid separator-secondary mt-7 mb-7"></div>
                     <div class="row">
-                      <div class="col">
+                      <div class="col-lg-6">
                         <div class="form-group">
-                          <label>Variable</label>
-                          <input type="text" class="form-control form-control-solid" value="VARIABLE_NAME" readonly>
-                        </div>
-                      </div>
-                      <div class="col-lg-8 col-xl-9">
-                        <div class="form-group">
-                          <label>Variable value</label>
-                          <div class="input-group">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text pt-1 pb-1"><img class="h-20px w-20px rounded-sm" src="assets/media/svg/flags/226-united-states.svg" alt=""></span>
-                            </div>
-                            <input type="text" class="form-control" placeholder="Variable value">
-                          </div>
-                        </div>
-                        <div class="separator separator-solid separator-secondary mb-7"></div>
-                        <div class="form-group">
-                          <label>Variable value</label>
-                          <div class="input-group">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text pt-1 pb-1"><img class="h-20px w-20px rounded-sm" src="assets/media/svg/flags/212-moldova.svg" alt=""></span>
-                            </div>
-                            <input type="text" class="form-control" placeholder="Variable value">
-                          </div>
-                        </div>
-                        <div class="separator separator-solid separator-secondary mb-7"></div>
-                        <div class="form-group">
-                          <label>Variable value</label>
-                          <div class="input-group">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text pt-1 pb-1"><img class="h-20px w-20px rounded-sm" src="assets/media/svg/flags/248-russia.svg" alt=""></span>
-                            </div>
-                            <input type="text" class="form-control" placeholder="Variable value">
-                          </div>
+                          <label>Instagram page</label>
+                          <input type="url" class="form-control">
                         </div>
                       </div>
                     </div>
-                    <div class="separator separator-solid separator-secondary mb-7"></div>
+                    <div class="separator separator-solid separator-secondary mt-7 mb-7"></div>
                     <div class="row">
-                      <div class="col">
+                      <div class="col-lg-6">
                         <div class="form-group">
-                          <label>Variable</label>
-                          <input type="text" class="form-control form-control-solid" value="VARIABLE_NAME" readonly>
-                        </div>
-                      </div>
-                      <div class="col-lg-8 col-xl-9">
-                        <div class="form-group">
-                          <label>Variable value</label>
-                          <div class="input-group">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text pt-1 pb-1"><img class="h-20px w-20px rounded-sm" src="assets/media/svg/flags/226-united-states.svg" alt=""></span>
-                            </div>
-                            <input type="text" class="form-control" placeholder="Variable value">
-                          </div>
-                        </div>
-                        <div class="separator separator-solid separator-secondary mb-7"></div>
-                        <div class="form-group">
-                          <label>Variable value</label>
-                          <div class="input-group">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text pt-1 pb-1"><img class="h-20px w-20px rounded-sm" src="assets/media/svg/flags/212-moldova.svg" alt=""></span>
-                            </div>
-                            <input type="text" class="form-control" placeholder="Variable value">
-                          </div>
-                        </div>
-                        <div class="separator separator-solid separator-secondary mb-7"></div>
-                        <div class="form-group">
-                          <label>Variable value</label>
-                          <div class="input-group">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text pt-1 pb-1"><img class="h-20px w-20px rounded-sm" src="assets/media/svg/flags/248-russia.svg" alt=""></span>
-                            </div>
-                            <input type="text" class="form-control" placeholder="Variable value">
-                          </div>
+                          <label>Instagram group</label>
+                          <input type="url" class="form-control">
                         </div>
                       </div>
                     </div>
-                    <div class="separator separator-solid separator-secondary mb-7"></div>
+                    <h3 class="pt-7 pb-5 mb-7 border-bottom">Scripts & widgets</h3>
                     <div class="row">
-                      <div class="col">
+                      <div class="col-lg-6">
                         <div class="form-group">
-                          <label>Variable</label>
-                          <input type="text" class="form-control form-control-solid" value="VARIABLE_NAME" readonly>
+                          <label>Google Analytics</label>
+                          <textarea class="form-control form-control-solid" rows="10"></textarea>
                         </div>
                       </div>
-                      <div class="col-lg-8 col-xl-9">
+                      <div class="col-lg-6">
                         <div class="form-group">
-                          <label>Variable value</label>
-                          <div class="input-group">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text pt-1 pb-1"><img class="h-20px w-20px rounded-sm" src="assets/media/svg/flags/226-united-states.svg" alt=""></span>
-                            </div>
-                            <input type="text" class="form-control" placeholder="Variable value">
-                          </div>
-                        </div>
-                        <div class="separator separator-solid separator-secondary mb-7"></div>
-                        <div class="form-group">
-                          <label>Variable value</label>
-                          <div class="input-group">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text pt-1 pb-1"><img class="h-20px w-20px rounded-sm" src="assets/media/svg/flags/212-moldova.svg" alt=""></span>
-                            </div>
-                            <input type="text" class="form-control" placeholder="Variable value">
-                          </div>
-                        </div>
-                        <div class="separator separator-solid separator-secondary mb-7"></div>
-                        <div class="form-group">
-                          <label>Variable value</label>
-                          <div class="input-group">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text pt-1 pb-1"><img class="h-20px w-20px rounded-sm" src="assets/media/svg/flags/248-russia.svg" alt=""></span>
-                            </div>
-                            <input type="text" class="form-control" placeholder="Variable value">
-                          </div>
+                          <label>Facebook widget</label>
+                          <textarea class="form-control form-control-solid" rows="10"></textarea>
                         </div>
                       </div>
                     </div>
-                    <div class="separator separator-solid separator-secondary mb-7"></div>
 
                   </div>
                   <div class="card-footer d-flex flex-column flex-sm-row justify-content-end align-items-start"><a href="#" class="btn btn-primary font-weight-bolder mb-4"><i class="la la-save"></i> Save changes</a></div>
@@ -1110,7 +1014,8 @@
     <!--end::Global Theme Bundle-->
 
     <!--begin::Page Scripts(used by this page)-->
-    <script src="assets/js/edit-translate.js"></script>
+    <script src="assets/plugins/custom/tinymce/tinymce.bundle.js"></script>
+    <script src="assets/js/general-settings.js"></script>
 
     <!--end::Page Scripts-->
   </body>

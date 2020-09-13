@@ -497,58 +497,46 @@
               <!--begin::Container-->
               <div class="container-fluid">
                 <div class="card card-custom">
+                  <div class="card-header align-items-center">
+                    <h3>SMTP settings</h3>
+                  </div>
                   <div class="card-body">
-                    <ul class="nav nav-tabs" role="tablist">
-                      <li class="nav-item" role="presentation">
-                        <a class="nav-link active" data-toggle="tab" href="#general">
-                          <span class="nav-icon"><i class="la la-file-text-o"></i></span>
-                          <span class="nav-text">General</span>
-                        </a>
-                      </li>
-                      <li class="nav-item" role="presentation">
-                        <a class="nav-link" data-toggle="tab" href="#data">
-                          <span class="nav-icon"><i class="la la-cog"></i></span>
-                          <span class="nav-text">Date</span>
-                        </a>
-                      </li>
-                    </ul>
-                    <div class="tab-content">
-                      <div class="tab-pane fade show active" id="general" role="tabpanel">
-
-                        <!-- LANG TABS -->
-                        <ul class="nav nav-light-success nav-pills justify-content-end pt-7" role="tablist">
-                          <li class="nav-item" role="presentation">
-                            <a class="nav-link active" data-toggle="tab" href="#lang-ru">
-                              <span class="nav-icon"><img src="assets/media/svg/flags/248-russia.svg" alt="" class="mr-2"></span>
-                              <span class="nav-text">Ru</span>
-                            </a>
-                          </li>
-                          <li class="nav-item" role="presentation">
-                            <a class="nav-link" data-toggle="tab" href="#lang-ro">
-                              <span class="nav-icon"><img src="assets/media/svg/flags/212-moldova.svg" alt="" class="mr-2"></span>
-                              <span class="nav-text">Ro</span>
-                            </a>
-                          </li>
-                          <li class="nav-item" role="presentation">
-                            <a class="nav-link" data-toggle="tab" href="#lang-en">
-                              <span class="nav-icon"><img src="assets/media/svg/flags/226-united-states.svg" alt="" class="mr-2"></span>
-                              <span class="nav-text">En</span>
-                            </a>
-                          </li>
-                        </ul>
-                        <div class="tab-content">
-                          <div class="tab-pane fade show active" id="lang-ru" role="tabpanel">lang-ru Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque nobis nostrum ratione, fugit nesciunt repellendus quaerat suscipit blanditiis eligendi sint?</div>
-                          <div class="tab-pane fade" id="lang-ro" role="tabpanel">lang-ro Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque nobis nostrum ratione, fugit nesciunt repellendus quaerat suscipit blanditiis eligendi sint?</div>
-                          <div class="tab-pane fade" id="lang-en" role="tabpanel">lang-en Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque nobis nostrum ratione, fugit nesciunt repellendus quaerat suscipit blanditiis eligendi sint?</div>
+                    <div class="row">
+                      <div class="col-lg-4">
+                        <div class="form-group">
+                          <label>SMTP host</label>
+                          <input type="url" class="form-control">
                         </div>
-                        <!-- END LANG TABS -->
-
-
                       </div>
-                      <div class="tab-pane fade" id="data" role="tabpanel">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque nobis nostrum ratione, fugit nesciunt repellendus quaerat suscipit blanditiis eligendi sint?</div>
+                    </div>
+                    <div class="separator separator-solid separator-secondary mt-7 mb-7"></div>
+                    <div class="row">
+                      <div class="col-lg-4">
+                        <div class="form-group">
+                          <label>SMTP login</label>
+                          <input type="text" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="separator separator-solid separator-secondary mt-7 mb-7"></div>
+                    <div class="row">
+                      <div class="col-lg-4">
+                        <div class="form-group">
+                          <label>SMTP password</label>
+                          <input type="password" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="separator separator-solid separator-secondary mt-7 mb-7"></div>
+                    <div class="row">
+                      <div class="col-lg-2">
+                        <div class="form-group">
+                          <label>SMTP PORT</label>
+                          <input type="text" class="form-control">
+                        </div>
+                      </div>
                     </div>
                   </div>
-
                   <div class="card-footer d-flex flex-column flex-sm-row justify-content-end align-items-start"><a href="#" class="btn btn-primary font-weight-bolder mb-4"><i class="la la-save"></i> Save changes</a></div>
                 </div>
               </div>
@@ -955,6 +943,7 @@
     <!--end::Global Theme Bundle-->
 
     <!--begin::Page Scripts(used by this page)-->
+    <script src="assets/js/mail-settings.js"></script>
 
     <!--end::Page Scripts-->
   </body>
