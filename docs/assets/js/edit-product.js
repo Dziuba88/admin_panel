@@ -67,6 +67,46 @@ var KTBootstrapSwitch = (function () {
     };
   };
 
+  const mediaItem = document.querySelectorAll(".option-image");
+
+  const uploaderInit = function (id) {
+    const image = new KTImageInput(id);
+    const emptyImage = "url(assets/media/noimage.jpg)";
+
+    image.on("cancel", function (id) {
+      swal.fire({
+        title: "Image successfully canceled !",
+        type: "success",
+        buttonsStyling: false,
+        confirmButtonText: "Awesome!",
+        confirmButtonClass: "btn btn-primary font-weight-bold",
+      });
+    });
+
+    image.on("change", function (id) {
+      image.element.style.removeProperty("background-image");
+
+      swal.fire({
+        title: "Image successfully changed !",
+        type: "success",
+        buttonsStyling: false,
+        confirmButtonText: "Awesome!",
+        confirmButtonClass: "btn btn-primary font-weight-bold",
+      });
+    });
+
+    image.on("remove", function (id) {
+      image.element.style.backgroundImage = emptyImage;
+      swal.fire({
+        title: "Image successfully removed !",
+        type: "error",
+        buttonsStyling: false,
+        confirmButtonText: "Got it!",
+        confirmButtonClass: "btn btn-primary font-weight-bold",
+      });
+    });
+  };
+
   var demos = function () {
     var image1 = new KTImageInput("kt_image_1");
 
@@ -154,7 +194,20 @@ var KTBootstrapSwitch = (function () {
       },
     });
 
-    $("#kt_repeater_3").repeater();
+    uploaderInit("opt");
+
+    $("#kt_repeater_3").repeater({
+      show: function () {
+        const postfix = $.now();
+        const imageUploader = $(this).find(".image-input");
+        const tempID = imageUploader.attr("id") + "-" + postfix;
+        imageUploader.attr("id", tempID);
+        imageUploader.find(".image-input-wrapper").attr("style", "");
+
+        uploaderInit(tempID);
+        $(this).slideDown();
+      },
+    });
 
     $("#kt_touchspin_1, #kt_touchspin_2").TouchSpin({
       buttondown_class: "btn btn-light-danger",

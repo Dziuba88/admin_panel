@@ -505,13 +505,13 @@
                       <div class="col-lg-4">
                         <div class="form-group">
                           <label>First Name</label>
-                          <input type="text" class="form-control form-control-solid">
+                          <input type="text" class="form-control form-control-solid" value="lorem ipsum" disabled>
                         </div>
                       </div>
                       <div class="col-lg-4">
                         <div class="form-group">
                           <label>Last Name</label>
-                          <input type="text" class="form-control form-control-solid">
+                          <input type="text" class="form-control form-control-solid" value="lorem ipsum" disabled>
                         </div>
                       </div>
                     </div>
@@ -520,22 +520,41 @@
                       <div class="col-lg-4">
                         <div class="form-group">
                           <label>e-Mail</label>
-                          <input type="email" class="form-control form-control-solid">
+                          <input type="email" class="form-control form-control-solid" value="lorem ipsum" disabled>
                         </div>
                       </div>
                       <div class="col-lg-4">
                         <div class="form-group">
                           <label>Phone</label>
-                          <input type="tel" class="form-control form-control-solid">
+                          <input type="tel" class="form-control form-control-solid" value="lorem ipsum" disabled>
                         </div>
                       </div>
                     </div>
                     <div class="separator separator-solid separator-secondary mb-7"></div>
-                    <div class="form-group">
-                      <label><strong class="text-danger">Reason Delete/Block</strong></label>
-                      <textarea rows="10" class="form-control bg-light-danger"></textarea>
+                    <div class="row">
+                      <div class="col-lg-4">
+                        <div class="form-group">
+                          <label>Request Date</label>
+                          <input id="theDate" type="date" class="form-control form-control-solid" disabled>
+                        </div>
+                      </div>
                     </div>
-
+                    <div class="separator separator-solid separator-secondary mb-7"></div>
+                    <div class="row">
+                      <div class="col-lg">
+                        <div class="form-group">
+                          <label><strong>User request</strong></label>
+                          <textarea rows="10" class="form-control" style="resize: none;"
+                            disabled>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur repudiandae sint suscipit porro, nisi neque. Maxime, repellendus! Nam minima laudantium quia veritatis ipsam, harum aut itaque sequi perferendis deleniti. Impedit magnam explicabo, nam ipsum earum, doloremque eveniet, ut alias culpa velit quam voluptatum in! Numquam illum vel excepturi dolore iusto nobis autem deserunt sequi doloribus enim, itaque tempore. Blanditiis, corrupti. Nisi dolorem, porro fugit aut dolor magni blanditiis deserunt atque facere! Illum, cumque cum maiores, et facere ut natus officia nisi eveniet, at expedita dicta id fugit corporis. Asperiores aperiam quo corporis, enim libero voluptate iure amet error cum, assumenda nulla, id dignissimos molestias voluptatem consequatur quod sit fugit. Illo tenetur laboriosam quibusdam, perspiciatis qui nihil dolorem nobis, natus nisi sequi repellendus nostrum totam consequatur dolore minima placeat provident sit est? Deserunt non doloremque sequi ullam eveniet, libero eos voluptatem rem laboriosam sapiente nulla veritatis adipisci delectus dolore totam dolor repudiandae hic. Porro explicabo commodi fugiat saepe laudantium et repellendus perspiciatis inventore. Nisi magni consequatur ducimus nemo blanditiis sequi aspernatur illum tempore officia suscipit ad totam deserunt ipsum odit aperiam, repellendus ab inventore incidunt dolorem nulla nesciunt maiores cupiditate unde. Iusto, sequi. Error ducimus eum delectus quo ratione deleniti, beatae sunt corrupti velit impedit rerum voluptates nulla quibusdam dolorem dolor. Vitae molestias praesentium quis ducimus, tempore eum dicta facere voluptatibus, quos necessitatibus exercitationem nobis perferendis optio! Distinctio nemo, assumenda aliquam sequi quae perspiciatis cum! Placeat, corporis provident voluptas magni sequi dolores quam laudantium. Recusandae minima animi ullam nobis ad deleniti dolor quae est nisi at ex omnis, aliquam fuga vel repellat hic aut eligendi ab. Quasi, voluptas illo. Repudiandae error eius, illo culpa natus quos numquam porro quisquam autem rem possimus enim deserunt placeat consequuntur modi, beatae nobis incidunt sequi similique in! Quibusdam nulla officia aperiam dolorem cumque animi laudantium sequi maxime excepturi consequatur soluta ipsa voluptatum est, nisi similique architecto repellat incidunt dolore. Dolorum culpa ullam maxime! Minus, eum?</textarea>
+                        </div>
+                      </div>
+                      <div class="col-lg">
+                        <div class="form-group">
+                          <label><strong class="text-danger">Reason Delete/Block</strong></label>
+                          <textarea rows="10" class="form-control bg-light-danger" style="resize: none;"></textarea>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                   <div class="card-footer d-flex flex-column flex-sm-row justify-content-end align-items-start">
                     <a href="#" class="btn btn-warning font-weight-bolder mr-2"><i class="la la-power-off"></i> Block profile</a>
@@ -947,6 +966,21 @@
 
     <!--begin::Page Scripts(used by this page)-->
     <script src="assets/js/delete-profile.js"></script>
+    <script>
+      $(document).ready(function () {
+        var date = new Date();
+
+        var day = date.getDate();
+        var month = date.getMonth() + 1;
+        var year = date.getFullYear();
+
+        if (month < 10) month = "0" + month;
+        if (day < 10) day = "0" + day;
+
+        var today = year + "-" + month + "-" + day;
+        $("#theDate").attr("value", today);
+      });
+    </script>
 
     <!--end::Page Scripts-->
   </body>

@@ -1,7 +1,13 @@
 var page = (function () {
   const initPage = function () {
-    $(".kt-selectpicker").selectpicker();
-    $("[data-switch=true]").bootstrapSwitch();
+    $("#kt_repeater").repeater({
+      show: function () {
+        $(this).slideDown();
+      },
+      hide: function (deleteElement) {
+        $(this).slideUp(deleteElement);
+      },
+    });
   };
 
   return {

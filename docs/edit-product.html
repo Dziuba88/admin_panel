@@ -975,7 +975,7 @@
                             <li class="list-group-item" data-repeater-item="">
                               <div class="row align-items-center">
                                 <div class="col-xl">
-                                  <div class="option-image image-input image-input-outline" style="background-image: url(assets/media/noimage.jpg)">
+                                  <div class="option-image image-input image-input-outline" style="background-image: url(assets/media/noimage.jpg)" id="opt">
                                     <div class="image-input-wrapper"></div>
                                     <label class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" data-original-title="Change avatar">
                                       <i class="fa fa-pen icon-sm text-muted"></i>
@@ -998,7 +998,11 @@
                                   </div>
                                   <div class="form-group">
                                     <label class="">Out of stock</label>
-                                    <div><input data-switch="true" type="checkbox" checked="checked" data-on-text="No" data-handle-width="60" data-off-text="Yes" data-off-color="danger" data-on-color="success" /></div>
+                                    <select class="custom-select form-control">
+                                      <option value="1" selected>Yes</option>
+                                      <option value="0">No</option>
+                                    </select>
+                                    <!-- <div><input data-switch="true" type="checkbox" checked="checked" data-on-text="No" data-handle-width="60" data-off-text="Yes" data-off-color="danger" data-on-color="success" /></div> -->
                                   </div>
                                 </div>
                                 <div class="col-xl">
@@ -1009,11 +1013,10 @@
                                   <div class="form-group">
                                     <label>Option Price</label>
                                     <div class="input-group">
-                                      <div class="input-group-prepend">
-                                        <div class="input-group-text pt-0 pb-0">
-                                          <input data-switch="true" data-size="small" type="checkbox" checked="checked" data-on-text="+" data-handle-width="8" data-off-text="-" data-off-color="danger" data-on-color="success" />
-                                        </div>
-                                      </div>
+                                      <select class="custom-select input-group-prepend" style="width: 60px;flex: none">
+                                        <option value="1" selected> + </option>
+                                        <option value="0"> - </option>
+                                      </select>
                                       <input type="number" class="form-control" value="3.00" step="0.01" />
                                     </div>
                                   </div>
@@ -1022,22 +1025,20 @@
                                   <div class="form-group">
                                     <label>Option Points</label>
                                     <div class="input-group">
-                                      <div class="input-group-prepend">
-                                        <div class="input-group-text pt-0 pb-0">
-                                          <input data-switch="true" data-size="small" type="checkbox" checked="checked" data-on-text="+" data-handle-width="8" data-off-text="-" data-off-color="danger" data-on-color="success" />
-                                        </div>
-                                      </div>
+                                      <select class="custom-select input-group-prepend" style="width: 60px;flex: none">
+                                        <option value="1" selected> + </option>
+                                        <option value="0"> - </option>
+                                      </select>
                                       <input type="number" class="form-control" value="3.00" step="0.01" />
                                     </div>
                                   </div>
                                   <div class="form-group">
                                     <label>Option Weight</label>
                                     <div class="input-group">
-                                      <div class="input-group-prepend">
-                                        <div class="input-group-text pt-0 pb-0">
-                                          <input data-switch="true" data-size="small" type="checkbox" checked="checked" data-on-text="+" data-handle-width="8" data-off-text="-" data-off-color="danger" data-on-color="success" />
-                                        </div>
-                                      </div>
+                                      <select class="custom-select input-group-prepend" style="width: 60px;flex: none">
+                                        <option value="1" selected> + </option>
+                                        <option value="0"> - </option>
+                                      </select>
                                       <input type="number" class="form-control" value="3.00" step="0.01" />
                                     </div>
                                   </div>

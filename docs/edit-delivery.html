@@ -543,26 +543,16 @@
                       </div>
                     </div>
                     <div class="separator separator-solid separator-secondary mt-7 mb-7"></div>
-                    <div class="row">
-                      <div class="col-lg-8 col-xl-9">
-                        <!--begin: Datatable-->
-                        <div class="datatable datatable-bordered datatable-head-custom" id="kt_datatable"></div>
-                        <!--end: Datatable-->
-                      </div>
-                      <div class="col-lg-4 col-xl-3">
-                        <div class="separator separator-solid separator-secondary mt-7 mb-7"></div>
-                        <!--begin::Card-->
-                        <div class="card card-custom mb-7">
-                          <div class="card-header">
-                            <div class="card-title">
-                              <h3 class="card-label">Add Delivery Option</h3>
-                            </div>
-                          </div>
-                          <div class="card-body">
-                            <div class="form-group">
-                              <label>Select Region</label>
-                              <div>
-                                <select id="selectpicker" class="form-control selectpicker" data-size="7" data-live-search="true">
+
+
+                    <div id="kt_repeater">
+                      <ul class="list-group mb-7" data-repeater-list="">
+                        <li class="list-group-item" data-repeater-item="">
+                          <div class="row align-items-center">
+                            <div class="col-lg">
+                              <div class="form-group">
+                                <label>Select Region</label>
+                                <select class="form-control custom-select">
                                   <option value="all" selected>All Regions</option>
                                   <option value="AF">Afghanistan</option>
                                   <option value="AX">Åland Islands</option>
@@ -816,28 +806,29 @@
                                 </select>
                               </div>
                             </div>
-                            <div class="form-group">
-                              <label>Delivery price</label>
-                              <div class="input-group">
-                                <input type="number" class="form-control" value="0.00" step="0.01" min="0" />
-                                <div class="input-group-append"><span class="input-group-text">mdl</span></div>
+                            <div class="col-lg">
+                              <div class="form-group">
+                                <label>Delivery price</label>
+                                <div class="input-group">
+                                  <input type="number" class="form-control" value="0.00" step="0.01" min="0" />
+                                  <div class="input-group-append"><span class="input-group-text">mdl</span></div>
+                                </div>
                               </div>
                             </div>
-                            <div class="form-group">
-                              <label>Free Delivery from</label>
-                              <div class="input-group">
-                                <input type="number" class="form-control" value="0.00" step="0.01" min="0" />
-                                <div class="input-group-append"><span class="input-group-text">mdl</span></div>
+                            <div class="col-lg">
+                              <div class="form-group">
+                                <label>Free Delivery from</label>
+                                <div class="input-group">
+                                  <input type="number" class="form-control" value="0.00" step="0.01" min="0" />
+                                  <div class="input-group-append"><span class="input-group-text">mdl</span></div>
+                                </div>
                               </div>
                             </div>
+                            <div class="col-lg text-right"><a href="javascript:;" data-repeater-delete="" class="btn btn-icon btn-danger"><i class="la la-trash-o"></i></a></div>
                           </div>
-                          <div class="card-footer text-right">
-                            <a href="#" class="btn btn-success font-weight-bolder mb-4"><i class="flaticon2-add"></i> Add Option</a>
-                          </div>
-                        </div>
-                        <!--end::Card-->
-
-                      </div>
+                        </li>
+                      </ul>
+                      <div><a href="javascript:;" data-repeater-create="" class="btn btn-success"><i class="flaticon2-add"></i> Add Option</a></div>
                     </div>
                   </div>
                   <div class="card-footer d-flex flex-column flex-sm-row justify-content-end align-items-start"><a href="#" class="btn btn-primary font-weight-bolder mb-4"><i class="la la-save"></i> Save changes</a></div>
