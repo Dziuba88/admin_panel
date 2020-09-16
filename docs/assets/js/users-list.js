@@ -1,7 +1,7 @@
 "use strict";
 // Class definition
 
-var KTDatatableDataLocalDemo = (function () {
+var pageScripts = (function () {
   // Private functions
 
   // demo initializer
@@ -100,5 +100,5 @@ var KTDatatableDataLocalDemo = (function () {
 })();
 
 jQuery(document).ready(function () {
-  KTDatatableDataLocalDemo.init();
+  pageScripts.init();
 });

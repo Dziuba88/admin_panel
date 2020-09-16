@@ -500,393 +500,158 @@
               <div class="container">
                 <div class="card card-custom">
                   <style type="text/css">
-                    .dd {
-                      position: relative;
-                      display: block;
-                      margin: 0;
-                      padding: 0;
-                      list-style: none;
-                      font-size: 13px;
-                      line-height: 20px;
-                      user-select: none;
+                    .handle {
+                      cursor: grab;
+                      color: var(--primary);
                     }
 
-                    .dd-list {
-                      display: block;
-                      position: relative;
-                      margin: 0;
-                      padding: 0;
-                      list-style: none;
+                    .list-group-item:hover {
+                      z-index: 0;
                     }
 
-                    .dd-list .dd-list {
-                      padding-left: 30px;
-                    }
-
-                    .dd-collapsed .dd-list {
-                      display: none;
-                    }
-
-                    .dd-item,
-                    .dd-empty,
-                    .dd-placeholder {
-                      display: block;
-                      position: relative;
-                      margin: 0;
-                      padding: 0;
-                      min-height: 20px;
-                      font-size: 13px;
-                      line-height: 20px;
-                    }
-
-                    .dd-handle {
-                      display: block;
-                      height: 40px;
-                      margin: 5px 0;
-                      padding: 10px 15px;
-                      color: #333;
-                      text-decoration: none;
-                      font-weight: bold;
-                      border: 1px solid #ccc;
-                      background: #fafafa;
-                      background: -webkit-linear-gradient(top, #fafafa 0%, #eee 100%);
-                      background: -moz-linear-gradient(top, #fafafa 0%, #eee 100%);
-                      background: linear-gradient(top, #fafafa 0%, #eee 100%);
-                      -webkit-border-radius: 3px;
-                      border-radius: 3px;
-                      box-sizing: border-box;
-                      -moz-box-sizing: border-box;
-                    }
-
-                    .dd-handle:hover {
-                      color: #2ea8e5;
-                      background: #fff;
-                    }
-
-                    .dd-item>button {
-                      display: block;
-                      position: relative;
-                      cursor: pointer;
-                      float: left;
-                      width: 25px;
-                      height: 30px;
-                      margin: 5px 0;
-                      padding: 0;
-                      text-indent: 100%;
-                      white-space: nowrap;
-                      overflow: hidden;
-                      border: 0;
-                      background: transparent;
-                      font-size: 12px;
-                      line-height: 1;
-                      text-align: center;
-                      font-weight: bold;
-                    }
-
-                    .dd-item>button:before {
-                      content: '+';
-                      display: block;
-                      position: absolute;
-                      width: 100%;
-                      text-align: center;
-                      text-indent: 0;
-                    }
-
-                    .dd-item>button[data-action="collapse"]:before {
-                      content: '-';
-                    }
-
-                    .dd-placeholder,
-                    .dd-empty {
-                      margin: 5px 0;
-                      padding: 0;
-                      min-height: 30px;
-                      background: #f2fbff;
-                      border: 1px dashed #b6bcbf;
-                      box-sizing: border-box;
-                      -moz-box-sizing: border-box;
-                    }
-
-                    .dd-empty {
-                      border: 1px dashed #bbb;
-                      min-height: 100px;
-                      background-color: #e5e5e5;
-                      background-image: -webkit-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff),
-                        -webkit-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff);
-                      background-image: -moz-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff),
-                        -moz-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff);
-                      background-image: linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff),
-                        linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff);
-                      background-size: 60px 60px;
-                      background-position: 0 0, 30px 30px;
-                    }
-
-                    .dd-dragel {
-                      position: absolute;
-                      pointer-events: none;
-                      z-index: 9999;
-                    }
-
-                    .dd-dragel>.dd-item .dd-handle {
-                      margin-top: 0;
-                    }
-
-                    .dd-dragel .dd-handle {
-                      -webkit-box-shadow: 2px 4px 6px 0 rgba(0, 0, 0, .1);
-                      box-shadow: 2px 4px 6px 0 rgba(0, 0, 0, .1);
+                    .list-group-item .list-group {
+                      padding-top: 1em;
+                      margin-bottom: 1em;
                     }
 
                   </style>
 
                   <div class="card-body">
-                    <!-- LANG TABS -->
                     <div class="row align-items-center justify-content-between mb-7">
                       <div class="pl-5">
                         <h3 class="mb-0 mt-0">Menu Name</h3>
                       </div>
                       <div class="pr-5"><input data-switch="true" type="checkbox" checked="checked" data-on-text="Enabled" data-handle-width="70" data-off-text="Disabled" data-off-color="danger" data-on-color="success" /></div>
                     </div>
+
                     <div class="row justify-content-between">
                       <div class="col-lg-4 mb-7">
-                        <div class="dd">
-                          <ol class="dd-list">
-                            <li class="dd-item">
-                              <div class="dd-handle">Dashboard</div>
-                            </li>
-                            <li class="dd-item">
-                              <div class="dd-handle">Catalog</div>
-                              <ol class="dd-list">
-                                <li class="dd-item">
-                                  <div class="dd-handle">Categorii produse</div>
-                                </li>
-                                <li class="dd-item">
-                                  <div class="dd-handle">Produse</div>
-                                </li>
-                                <li class="dd-item">
-                                  <div class="dd-handle">Filtre</div>
-                                </li>
-                                <li class="dd-item">
-                                  <div class="dd-handle">Grupuri de atribute</div>
-                                </li>
-                                <li class="dd-item">
-                                  <div class="dd-handle">Atribute</div>
-                                </li>
-                              </ol>
-                            </li>
-                            <li class="dd-item">
-                              <div class="dd-handle">Continut site</div>
-                              <ol class="dd-list">
-                                <li class="dd-item">
-                                  <div class="dd-handle">Pagini informative</div>
-                                </li>
-                                <li class="dd-item">
-                                  <div class="dd-handle">Meniuri</div>
-                                </li>
-                                <li class="dd-item">
-                                  <div class="dd-handle">Bannere</div>
-                                </li>
-                                <li class="dd-item">
-                                  <div class="dd-handle">Blog</div>
-                                </li>
-                                <li class="dd-item">
-                                  <div class="dd-handle">Moderare articole</div>
-                                </li>
-                                <li class="dd-item">
-                                  <div class="dd-handle">Afaceri sociale Market</div>
-                                </li>
-                                <li class="dd-item">
-                                  <div class="dd-handle">Afaceri sociale Community</div>
-                                </li>
-                                <li class="dd-item">
-                                  <div class="dd-handle">Carousel logo</div>
-                                </li>
-                              </ol>
-                            </li>
-                            <li class="dd-item">
-                              <div class="dd-handle">Vanzari</div>
-                              <ol class="dd-list">
-                                <li class="dd-item">
-                                  <div class="dd-handle">Comenzi</div>
-                                </li>
-                                <li class="dd-item">
-                                  <div class="dd-handle">Lista clienti</div>
-                                </li>
-                              </ol>
-                            </li>
-                            <li class="dd-item">
-                              <div class="dd-handle">Extensii</div>
-                              <ol class="dd-list">
-                                <li class="dd-item">
-                                  <div class="dd-handle">Metode de plata</div>
-                                </li>
-                                <li class="dd-item">
-                                  <div class="dd-handle">Metode de livrare</div>
-                                </li>
-                                <li class="dd-item">
-                                  <div class="dd-handle">Paynet</div>
-                                </li>
-                                <li class="dd-item">
-                                  <div class="dd-handle">Nova Poshta</div>
-                                </li>
-                              </ol>
-                            </li>
-                            <li class="dd-item">
-                              <div class="dd-handle">Limbi</div>
-                              <ol class="dd-list">
-                                <li class="dd-item">
-                                  <div class="dd-handle">Site</div>
-                                </li>
-                                <li class="dd-item">
-                                  <div class="dd-handle">Panou de administrare</div>
-                                </li>
-                              </ol>
-                            </li>
-                            <li class="dd-item">
-                              <div class="dd-handle">Traduceri</div>
-                              <ol class="dd-list">
-                                <li class="dd-item">
-                                  <div class="dd-handle">Site</div>
-                                </li>
-                                <li class="dd-item">
-                                  <div class="dd-handle">Panou de administrare</div>
-                                </li>
-                              </ol>
-                            </li>
-                            <li class="dd-item">
-                              <div class="dd-handle">Utilizatori</div>
-                              <ol class="dd-list">
-                                <li class="dd-item">
-                                  <div class="dd-handle">Grupuri de utilizatori</div>
-                                </li>
-                                <li class="dd-item">
-                                  <div class="dd-handle">Utilizatori Administrator</div>
-                                </li>
-                                <li class="dd-item">
-                                  <div class="dd-handle">Utilizatori Vendor</div>
-                                </li>
-                                <li class="dd-item">
-                                  <div class="dd-handle">Moderare vendori</div>
-                                </li>
-                                <li class="dd-item">
-                                  <div class="dd-handle">Solicitări ștergere profil Vendor</div>
-                                </li>
-                                <li class="dd-item">
-                                  <div class="dd-handle">Utilizatori Site</div>
-                                </li>
-                                <li class="dd-item">
-                                  <div class="dd-handle">Moderare utilizatori site</div>
-                                </li>
-                              </ol>
-                            </li>
-                            <li class="dd-item">
-                              <div class="dd-handle">Mail</div>
-                              <ol class="dd-list">
-                                <li class="dd-item">
-                                  <div class="dd-handle">Sabloane de email</div>
-                                  <ol class="dd-list">
-                                    <li class="dd-item">
-                                      <div class="dd-handle">Pentru utilizatori</div>
-                                    </li>
-                                    <li class="dd-item">
-                                      <div class="dd-handle">Pentru Vendor</div>
-                                    </li>
-                                  </ol>
-                                </li>
-                                <li class="dd-item">
-                                  <div class="dd-handle">Lista utilizatorilor</div>
-
-                                  <ol class="dd-list">
-                                    <li class="dd-item">
-                                      <div class="dd-handle">Utilizatori simpli</div>
-                                    </li>
-                                    <li class="dd-item">
-                                      <div class="dd-handle">Vendori</div>
-                                    </li>
-                                  </ol>
-                                </li>
-                              </ol>
-                            </li>
-                            <li class="dd-item">
-                              <div class="dd-handle">Newsletter</div>
-                            </li>
-                            <li class="dd-item">
-                              <div class="dd-handle">Recenzii</div>
-                            </li>
-                            <li class="dd-item">
-                              <div class="dd-handle">Raportare</div>
-                            </li>
-                            <li class="dd-item">
-                              <div class="dd-handle">FAQ</div>
-                              <ol class="dd-list">
-                                <li class="dd-item">
-                                  <div class="dd-handle">Categorii de intrebari</div>
-                                </li>
-                                <li class="dd-item">
-                                  <div class="dd-handle">Intrebari</div>
-                                </li>
-                              </ol>
-                            </li>
-                            <li class="dd-item">
-                              <div class="dd-handle">Setari</div>
-                              <ol class="dd-list">
-                                <li class="dd-item">
-                                  <div class="dd-handle">General</div>
-                                </li>
-                                <li class="dd-item">
-                                  <div class="dd-handle">Meta date</div>
-                                  <ol class="dd-list">
-                                    <li class="dd-item">
-                                      <div class="dd-handle">Brend-uri</div>
-                                    </li>
-                                    <li class="dd-item">
-                                      <div class="dd-handle">Afaceri sociale</div>
-                                    </li>
-                                    <li class="dd-item">
-                                      <div class="dd-handle">ONG si initiative</div>
-                                    </li>
-                                    <li class="dd-item">
-                                      <div class="dd-handle">Comparare</div>
-                                    </li>
-                                    <li class="dd-item">
-                                      <div class="dd-handle">Cos</div>
-                                    </li>
-                                    <li class="dd-item">
-                                      <div class="dd-handle">Community</div>
-                                    </li>
-                                    <li class="dd-item">
-                                      <div class="dd-handle">Blog</div>
-                                    </li>
-                                    <li class="dd-item">
-                                      <div class="dd-handle">Logare</div>
-                                    </li>
-                                    <li class="dd-item">
-                                      <div class="dd-handle">Inregistrare</div>
-                                    </li>
-                                  </ol>
-                                </li>
-                                <li class="dd-item">
-                                  <div class="dd-handle">Jurnal de erori</div>
-                                </li>
-                                <li class="dd-item">
-                                  <div class="dd-handle">Mail SMTP</div>
-                                </li>
-                                <li class="dd-item">
-                                  <div class="dd-handle">Localizare</div>
-                                  <ol class="dd-list">
-                                    <li class="dd-item">
-                                      <div class="dd-handle">Statusuri comenzi</div>
-                                    </li>
-                                    <li class="dd-item">
-                                      <div class="dd-handle">Zone</div>
-                                    </li>
-                                    <li class="dd-item">
-                                      <div class="dd-handle">Unitati de masura</div>
-                                    </li>
-                                  </ol>
-                                </li>
-                              </ol>
-                            </li>
-                          </ol>
+                        <div class="list-group nested-sortable">
+                          <div class="list-group-item">
+                            <div class="d-flex align-items-center pt-1 pb-1">
+                              <i class="fas fa-arrows-alt handle"></i>
+                              <div class="col">Menu item title</div>
+                              <span class="switch switch-sm switch-outline switch-icon switch-success"><label><input type="checkbox" checked="checked" name="select" /><span></span></label></span>
+                            </div>
+                            <div class="list-group nested-sortable">
+                              <div class="list-group-item nested-2">
+                                <div class="d-flex align-items-center pt-1 pb-1">
+                                  <i class="fas fa-arrows-alt handle"></i>
+                                  <div class="col">Menu item title</div>
+                                  <span class="switch switch-sm switch-outline switch-icon switch-success"><label><input type="checkbox" checked="checked" name="select" /><span></span></label></span>
+                                </div>
+                              </div>
+                              <div class="list-group-item nested-2">
+                                <div class="d-flex align-items-center pt-1 pb-1">
+                                  <i class="fas fa-arrows-alt handle"></i>
+                                  <div class="col">Menu item title</div>
+                                  <span class="switch switch-sm switch-outline switch-icon switch-success"><label><input type="checkbox" checked="checked" name="select" /><span></span></label></span>
+                                </div>
+                                <div class="list-group nested-sortable">
+                                  <div class="list-group-item nested-3">
+                                    <div class="d-flex align-items-center pt-1 pb-1">
+                                      <i class="fas fa-arrows-alt handle"></i>
+                                      <div class="col">Menu item title</div>
+                                      <span class="switch switch-sm switch-outline switch-icon switch-success"><label><input type="checkbox" checked="checked" name="select" /><span></span></label></span>
+                                    </div>
+                                  </div>
+                                  <div class="list-group-item nested-3">
+                                    <div class="d-flex align-items-center pt-1 pb-1">
+                                      <i class="fas fa-arrows-alt handle"></i>
+                                      <div class="col">Menu item title</div>
+                                      <span class="switch switch-sm switch-outline switch-icon switch-success"><label><input type="checkbox" checked="checked" name="select" /><span></span></label></span>
+                                    </div>
+                                  </div>
+                                  <div class="list-group-item nested-3">
+                                    <div class="d-flex align-items-center pt-1 pb-1">
+                                      <i class="fas fa-arrows-alt handle"></i>
+                                      <div class="col">Menu item title</div>
+                                      <span class="switch switch-sm switch-outline switch-icon switch-success"><label><input type="checkbox" checked="checked" name="select" /><span></span></label></span>
+                                    </div>
+                                  </div>
+                                  <div class="list-group-item nested-3">
+                                    <div class="d-flex align-items-center pt-1 pb-1">
+                                      <i class="fas fa-arrows-alt handle"></i>
+                                      <div class="col">Menu item title</div>
+                                      <span class="switch switch-sm switch-outline switch-icon switch-success"><label><input type="checkbox" checked="checked" name="select" /><span></span></label></span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="list-group-item nested-2">
+                                <div class="d-flex align-items-center pt-1 pb-1">
+                                  <i class="fas fa-arrows-alt handle"></i>
+                                  <div class="col">Menu item title</div>
+                                  <span class="switch switch-sm switch-outline switch-icon switch-success"><label><input type="checkbox" checked="checked" name="select" /><span></span></label></span>
+                                </div>
+                              </div>
+                              <div class="list-group-item nested-2">
+                                <div class="d-flex align-items-center pt-1 pb-1">
+                                  <i class="fas fa-arrows-alt handle"></i>
+                                  <div class="col">Menu item title</div>
+                                  <span class="switch switch-sm switch-outline switch-icon switch-success"><label><input type="checkbox" checked="checked" name="select" /><span></span></label></span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="list-group-item nested-1">
+                            <div class="d-flex align-items-center pt-1 pb-1">
+                              <i class="fas fa-arrows-alt handle"></i>
+                              <div class="col">Menu item title</div>
+                              <span class="switch switch-sm switch-outline switch-icon switch-success"><label><input type="checkbox" checked="checked" name="select" /><span></span></label></span>
+                            </div>
+                          </div>
+                          <div class="list-group-item nested-1">
+                            <div class="d-flex align-items-center pt-1 pb-1">
+                              <i class="fas fa-arrows-alt handle"></i>
+                              <div class="col">Menu item title</div>
+                              <span class="switch switch-sm switch-outline switch-icon switch-success"><label><input type="checkbox" checked="checked" name="select" /><span></span></label></span>
+                            </div>
+                          </div>
+                          <div class="list-group-item nested-1">
+                            <div class="d-flex align-items-center pt-1 pb-1">
+                              <i class="fas fa-arrows-alt handle"></i>
+                              <div class="col">Menu item title</div>
+                              <span class="switch switch-sm switch-outline switch-icon switch-success"><label><input type="checkbox" checked="checked" name="select" /><span></span></label></span>
+                            </div>
+                            <div class="list-group nested-sortable">
+                              <div class="list-group-item nested-2">
+                                <div class="d-flex align-items-center pt-1 pb-1">
+                                  <i class="fas fa-arrows-alt handle"></i>
+                                  <div class="col">Menu item title</div>
+                                  <span class="switch switch-sm switch-outline switch-icon switch-success"><label><input type="checkbox" checked="checked" name="select" /><span></span></label></span>
+                                </div>
+                              </div>
+                              <div class="list-group-item nested-2">
+                                <div class="d-flex align-items-center pt-1 pb-1">
+                                  <i class="fas fa-arrows-alt handle"></i>
+                                  <div class="col">Menu item title</div>
+                                  <span class="switch switch-sm switch-outline switch-icon switch-success"><label><input type="checkbox" checked="checked" name="select" /><span></span></label></span>
+                                </div>
+                              </div>
+                              <div class="list-group-item nested-2">
+                                <div class="d-flex align-items-center pt-1 pb-1">
+                                  <i class="fas fa-arrows-alt handle"></i>
+                                  <div class="col">Menu item title</div>
+                                  <span class="switch switch-sm switch-outline switch-icon switch-success"><label><input type="checkbox" checked="checked" name="select" /><span></span></label></span>
+                                </div>
+                              </div>
+                              <div class="list-group-item nested-2">
+                                <div class="d-flex align-items-center pt-1 pb-1">
+                                  <i class="fas fa-arrows-alt handle"></i>
+                                  <div class="col">Menu item title</div>
+                                  <span class="switch switch-sm switch-outline switch-icon switch-success"><label><input type="checkbox" checked="checked" name="select" /><span></span></label></span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="list-group-item nested-1">
+                            <div class="d-flex align-items-center pt-1 pb-1">
+                              <i class="fas fa-arrows-alt handle"></i>
+                              <div class="col">Menu item title</div>
+                              <span class="switch switch-sm switch-outline switch-icon switch-success"><label><input type="checkbox" checked="checked" name="select" /><span></span></label></span>
+                            </div>
+                          </div>
                         </div>
                       </div>
                       <div class="col-lg-4 mb-7">
@@ -2071,7 +1836,8 @@
     <!--end::Global Theme Bundle-->
 
     <!--begin::Page Scripts(used by this page)-->
-    <script src="assets/plugins/custom/jquery.nestable.js"></script>
+    <!-- <script src="assets/plugins/custom/jquery.nestable.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
     <script src="assets/js/edit-menu.js"></script>
 
     <!--end::Page Scripts-->

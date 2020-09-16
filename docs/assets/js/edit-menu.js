@@ -3,10 +3,21 @@
 var editMenu = (function () {
   // Private functions
   var initFn = function () {
-    $(".dd").nestable({ maxDepth: 3 });
-    $(".dd").nestable("collapseAll");
-
     $("[data-switch=true]").bootstrapSwitch();
+
+    var nestedSortables = [].slice.call(
+      document.querySelectorAll(".nested-sortable")
+    );
+
+    for (var i = 0; i < nestedSortables.length; i++) {
+      new Sortable(nestedSortables[i], {
+        handle: ".handle",
+        group: "nested",
+        animation: 150,
+        fallbackOnBody: true,
+        swapThreshold: 0.65,
+      });
+    }
   };
 
   return {
